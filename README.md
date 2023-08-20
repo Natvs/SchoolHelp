@@ -16,7 +16,8 @@ Click on the button "Ajouter une note" to create a new one and then in the dialo
 What are collections?
 Collections are like a folder in which you can create other collections or marks.
 To create one, click on the button "Ajouter une collection" and then in the dialog form :
-- Either choose a color for the collection or select the auto color option
+- Enter a name for you collection
+- Either choose a color for the collection or select the auto color option.
 Once created, the mark under the name of the collection will be automatically updated 
 depending on all the marks inside it.
 
@@ -45,7 +46,9 @@ Under the button to edit list, there are two colums with your list columns names
 - In the second column, the whole list will be displayed but in a random way.
 
 What are collections?
-Collections are simple folders to help you organize your lists.
+Collections are simple folders to help you organize your lists. To create one, clich on the "Créer une collection" button and then in the dialog form:
+- Enter a name for your collection
+- Select a color for the collection
  
 If you need a more sophisticated list, I invite you to try the MiniExplorator app.
 
