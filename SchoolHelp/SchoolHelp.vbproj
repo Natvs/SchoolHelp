@@ -72,11 +72,120 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.vb" />
-    <Compile Include="Marks\Collections\setCollectionDialog.Designer.vb">
-      <DependentUpon>setCollectionDialog.vb</DependentUpon>
+    <Compile Include="Lists\Collections\ListCollectionBox.Designer.vb">
+      <DependentUpon>ListCollectionBox.vb</DependentUpon>
     </Compile>
-    <Compile Include="Marks\Collections\setCollectionDialog.vb">
+    <Compile Include="Lists\Collections\ListCollectionBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lists\Collections\setListsCollectionDialog.Designer.vb">
+      <DependentUpon>setListsCollectionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\Collections\setListsCollectionDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lists\ListsOptionsForm.Designer.vb">
+      <DependentUpon>ListsOptionsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\ListsOptionsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lists\Lists\EditList\EditListItemsDialog.Designer.vb">
+      <DependentUpon>EditListItemsDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\Lists\EditList\EditListItemsDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lists\Lists - Data.vb" />
+    <Compile Include="Lists\ListsForm.Designer.vb">
+      <DependentUpon>ListsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\ListsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lists\Lists\ListBox.Designer.vb">
+      <DependentUpon>ListBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\Lists\ListBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lists\Lists\EditList\ListItemsBox.Designer.vb">
+      <DependentUpon>ListItemsBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\Lists\EditList\ListItemsBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lists\Lists\EditList\ListTitlesBox.Designer.vb">
+      <DependentUpon>ListTitlesBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\Lists\EditList\ListTitlesBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lists\Lists\OpenList\LaunchListDialog.Designer.vb">
+      <DependentUpon>LaunchListDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\Lists\OpenList\LaunchListDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lists\Lists\OpenList\OpenListDialog.Designer.vb">
+      <DependentUpon>OpenListDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\Lists\OpenList\OpenListDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lists\Lists\setListDialog.Designer.vb">
+      <DependentUpon>setListDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\Lists\setListDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditColorByNumberBox.Designer.vb">
+      <DependentUpon>EditColorByNumberBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditColorByNumberBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditColorsByNumberBox.Designer.vb">
+      <DependentUpon>EditColorsByNumberBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditColorsByNumberBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Marks\Options\MarksOptionsDialog.Designer.vb">
+      <DependentUpon>MarksOptionsDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marks\Options\MarksOptionsDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressionDialog.Designer.vb">
+      <DependentUpon>ProgressionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressionDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchoolHelpDialog.Designer.vb">
+      <DependentUpon>SchoolHelpDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolHelpDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\ButtonMessageBox.Designer.vb">
+      <DependentUpon>ButtonMessageBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ButtonMessageBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TextMessageBox.Designer.vb">
+      <DependentUpon>TextMessageBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TextMessageBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Options.vb" />
+    <Compile Include="Marks\Collections\setMarksCollectionDialog.Designer.vb">
+      <DependentUpon>setMarksCollectionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marks\Collections\setMarksCollectionDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserControls\ColorsBox.Designer.vb">
@@ -104,16 +213,16 @@
     <Compile Include="Marks\Collections\MarksCollectionBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProgressionDialog.Designer.vb">
-      <DependentUpon>ProgressionDialog.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ProgressionDialog.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Marks\Marks\MarkBox.Designer.vb">
       <DependentUpon>MarkBox.vb</DependentUpon>
     </Compile>
     <Compile Include="Marks\Marks\MarkBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NumericMessageBox.Designer.vb">
+      <DependentUpon>NumericMessageBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NumericMessageBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\OptionBox.Designer.vb">
@@ -122,11 +231,11 @@
     <Compile Include="UserControls\OptionBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StartingForm.vb">
+    <Compile Include="OptionsForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartingForm.Designer.vb">
-      <DependentUpon>StartingForm.vb</DependentUpon>
+    <Compile Include="OptionsForm.Designer.vb">
+      <DependentUpon>OptionsForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -144,10 +253,65 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="values.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Marks\Collections\setCollectionDialog.resx">
-      <DependentUpon>setCollectionDialog.vb</DependentUpon>
+    <EmbeddedResource Include="Lists\Collections\ListCollectionBox.resx">
+      <DependentUpon>ListCollectionBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\Collections\setListsCollectionDialog.resx">
+      <DependentUpon>setListsCollectionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\ListsOptionsForm.resx">
+      <DependentUpon>ListsOptionsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\Lists\EditList\EditListItemsDialog.resx">
+      <DependentUpon>EditListItemsDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\ListsForm.resx">
+      <DependentUpon>ListsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\Lists\ListBox.resx">
+      <DependentUpon>ListBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\Lists\EditList\ListItemsBox.resx">
+      <DependentUpon>ListItemsBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\Lists\EditList\ListTitlesBox.resx">
+      <DependentUpon>ListTitlesBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\Lists\OpenList\LaunchListDialog.resx">
+      <DependentUpon>LaunchListDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\Lists\OpenList\OpenListDialog.resx">
+      <DependentUpon>OpenListDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\Lists\setListDialog.resx">
+      <DependentUpon>setListDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marks\Collections\setMarksCollectionDialog.resx">
+      <DependentUpon>setMarksCollectionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EditColorByNumberBox.resx">
+      <DependentUpon>EditColorByNumberBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EditColorsByNumberBox.resx">
+      <DependentUpon>EditColorsByNumberBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marks\Options\MarksOptionsDialog.resx">
+      <DependentUpon>MarksOptionsDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressionDialog.resx">
+      <DependentUpon>ProgressionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchoolHelpDialog.resx">
+      <DependentUpon>SchoolHelpDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ButtonMessageBox.resx">
+      <DependentUpon>ButtonMessageBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TextMessageBox.resx">
+      <DependentUpon>TextMessageBox.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ColorsBox.resx">
       <DependentUpon>ColorsBox.vb</DependentUpon>
@@ -170,14 +334,14 @@
     <EmbeddedResource Include="Marks\Marks\MarkBox.resx">
       <DependentUpon>MarkBox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProgressionDialog.resx">
-      <DependentUpon>ProgressionDialog.vb</DependentUpon>
+    <EmbeddedResource Include="UserControls\NumericMessageBox.resx">
+      <DependentUpon>NumericMessageBox.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\OptionBox.resx">
       <DependentUpon>OptionBox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StartingForm.resx">
-      <DependentUpon>StartingForm.vb</DependentUpon>
+    <EmbeddedResource Include="OptionsForm.resx">
+      <DependentUpon>OptionsForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -190,9 +354,16 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\selectedColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wen.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

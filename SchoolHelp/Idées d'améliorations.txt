@@ -1,0 +1,14 @@
+﻿- Pour les notes
+	- Possibilité de donner un coefficient aux collections ou de le définir par les notes dans cette collection
+	- Possibilité de déplacer les notes et les collections
+
+- Pour les listes
+	- Indiquer lorsqu'il y a plusieurs items correspondants à la même occurence
+
+	- Rendre possible la réorganisation des termes d'une liste
+
+	- Faire en sorte que l'utilisateur puisse insérer des caractères spéciaux (depuis la fenêtre de modification de la liste)
+
+	- Modifier le code pour montrer la liste : trop de lignes lors des recherches
+
+	- Possibilité de déplacer les listes et les collections

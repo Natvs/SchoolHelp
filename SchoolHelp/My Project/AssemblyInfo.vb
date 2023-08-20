@@ -6,19 +6,19 @@ Imports System.Runtime.InteropServices
 ' l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 ' associées à un assembly.
 
-' Vérifiez les valeurs des attributs de l'assembly
+' Passez en revue les valeurs des attributs de l'assembly
 
-<Assembly: AssemblyTitle("SchoolHelp")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("Hewlett-Packard Company")>
-<Assembly: AssemblyProduct("SchoolHelp")>
-<Assembly: AssemblyCopyright("Copyright © Hewlett-Packard Company 2019")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyTitle("Jeu du morpion")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("Jeu du morpion")> 
+<Assembly: AssemblyCopyright("Copyright ©  2016")> 
+<Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 'Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-<Assembly: Guid("ae516e70-8c0a-4632-9596-e82142b893e4")>
+<Assembly: Guid("8b72255c-260b-4854-b7e3-873de25e13fa")> 
 
 ' Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> 

@@ -23,6 +23,7 @@ Partial Class OptionBox
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.optionPanel = New System.Windows.Forms.TableLayoutPanel()
+        Me.optionsButton = New System.Windows.Forms.Button()
         Me.descriptionLabel = New System.Windows.Forms.Label()
         Me.launchButton = New System.Windows.Forms.Button()
         Me.titleLabel = New System.Windows.Forms.Label()
@@ -34,6 +35,7 @@ Partial Class OptionBox
         Me.optionPanel.AutoSize = True
         Me.optionPanel.ColumnCount = 1
         Me.optionPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.optionPanel.Controls.Add(Me.optionsButton, 0, 3)
         Me.optionPanel.Controls.Add(Me.descriptionLabel, 0, 1)
         Me.optionPanel.Controls.Add(Me.launchButton, 0, 2)
         Me.optionPanel.Controls.Add(Me.titleLabel, 0, 0)
@@ -42,12 +44,26 @@ Partial Class OptionBox
         Me.optionPanel.MaximumSize = New System.Drawing.Size(400, 0)
         Me.optionPanel.MinimumSize = New System.Drawing.Size(400, 0)
         Me.optionPanel.Name = "optionPanel"
-        Me.optionPanel.RowCount = 3
+        Me.optionPanel.RowCount = 4
         Me.optionPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.optionPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.optionPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.optionPanel.Size = New System.Drawing.Size(400, 100)
+        Me.optionPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.optionPanel.Size = New System.Drawing.Size(400, 141)
         Me.optionPanel.TabIndex = 0
+        '
+        'optionsButton
+        '
+        Me.optionsButton.AutoSize = True
+        Me.optionsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.optionsButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.optionsButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.optionsButton.Location = New System.Drawing.Point(3, 103)
+        Me.optionsButton.Name = "optionsButton"
+        Me.optionsButton.Size = New System.Drawing.Size(394, 35)
+        Me.optionsButton.TabIndex = 3
+        Me.optionsButton.Text = "Options"
+        Me.optionsButton.UseVisualStyleBackColor = True
         '
         'descriptionLabel
         '
@@ -96,7 +112,7 @@ Partial Class OptionBox
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Controls.Add(Me.optionPanel)
         Me.Name = "OptionBox"
-        Me.Size = New System.Drawing.Size(400, 100)
+        Me.Size = New System.Drawing.Size(400, 141)
         Me.optionPanel.ResumeLayout(False)
         Me.optionPanel.PerformLayout()
         Me.ResumeLayout(False)
@@ -108,4 +124,5 @@ Partial Class OptionBox
     Friend WithEvents descriptionLabel As Label
     Friend WithEvents launchButton As Button
     Friend WithEvents titleLabel As Label
+    Friend WithEvents optionsButton As Button
 End Class

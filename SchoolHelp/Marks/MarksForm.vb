@@ -55,6 +55,7 @@ Public Class MarksForm
     ''' Actualise les instances MarkBox dans marksPanel
     ''' </summary>
     Public Sub updateMarks()
+        marksPanel.SuspendLayout()
         marksPanel.Controls.Clear()
         If collectionBoxesList.Count > 0 Then
             For i = 1 To collectionBoxesList.Count
@@ -66,6 +67,7 @@ Public Class MarksForm
                 marksPanel.Controls.Add(markBoxesList.Item(i - 1))
             Next
         End If
+        marksPanel.ResumeLayout()
     End Sub
 
 #End Region
@@ -87,9 +89,9 @@ Public Class MarksForm
     Public Sub addMark()
         Dim newMarkBox As New MarkBox
         Using markDialog As New setMarkDialog
-            Dim result As DialogResult = markDialog.ShowDialog(20, 1)
+            Dim result As DialogResult = markDialog.ShowDialog("", 20, 1, Nothing, False)
             If result = DialogResult.OK Then
-                newMarkBox.initialize(markDialog.mark, markDialog.coef, markDialog.selectedBackColor, Me)
+                newMarkBox.initialize(markDialog.markName, markDialog.mark, markDialog.coef, markDialog.selectedColorNumber, markDialog.useAutoColor, Me)
                 markBoxesList.Add(newMarkBox)
                 updateMarks()
             End If
@@ -128,13 +130,14 @@ Public Class MarksForm
     ''' </summary>
     Public Sub addCollection()
         Dim newCollectionBox As New MarksCollectionBox
-        Using collectionDialog As New setCollectionDialog
-            Dim result As DialogResult = collectionDialog.ShowDialog("")
-            If result = DialogResult.OK Then
-                newCollectionBox.initialize(collectionDialog.collectionName, Me)
-                IO.Directory.CreateDirectory(marksApp.collections.getPath(currentCollectionsList) + "/" + newCollectionBox.collectionName)
-                newCollectionBox.displayMedium(marksApp.collections.getMedium(marksApp.collections.getPath(currentCollectionsList), newCollectionBox))
-                collectionBoxesList.Add(newCollectionBox)
+        Using collectionDialog As New setMarksCollectionDialog
+            Dim result As DialogResult = collectionDialog.ShowDialog("", Nothing, False)
+            If result = DialogResult.OK And collectionDialog.selectedName IsNot Nothing Then
+                newCollectionBox.Initialize(collectionDialog.selectedName, marksApp.collections.getCollectionDirectoryPath(currentPath, collectionDialog.selectedName), collectionDialog.selectedColorNumber, collectionDialog.useAutoColor, Me)
+                If values.directory.CheckName(newCollectionBox.collectionName, True) Then
+                    values.directory.Create(marksApp.collections.getPath(currentCollectionsList), newCollectionBox.collectionName, False, False)
+                    collectionBoxesList.Add(newCollectionBox)
+                End If
             End If
         End Using
     End Sub
@@ -146,7 +149,7 @@ Public Class MarksForm
     Public Sub deleteCollection(mark As MarksCollectionBox)
         If collectionBoxesList.Contains(mark) Then
             collectionBoxesList.Remove(mark)
-            IO.Directory.Delete(marksApp.collections.getPath(currentCollectionsList) + "/" + mark.collectionName, True)
+            values.directory.delete(marksApp.collections.getPath(currentCollectionsList) + "/" + mark.collectionName)
             updateMarks()
         Else
             MessageBox.Show("Cette collection n'existe pas.")
@@ -187,6 +190,8 @@ Public Class MarksForm
     Public Sub closeCollection(collection As MarksCollectionBox)
         If currentCollection Is Nothing Then
             Close()
+            collectionBoxesList.Clear()
+            markBoxesList.Clear()
         Else
             marksApp.saveAll(markBoxesList, collectionBoxesList, marksApp.collections.getPath(currentCollectionsList))
 

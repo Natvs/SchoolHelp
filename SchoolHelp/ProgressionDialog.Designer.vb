@@ -22,65 +22,70 @@ Partial Class ProgressionDialog
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.mainTableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
-        Me.progressionBar = New System.Windows.Forms.ProgressBar()
-        Me.progressionLabel = New System.Windows.Forms.Label()
-        Me.mainTableLayoutPanel.SuspendLayout()
+        Me.ProgressionBar = New System.Windows.Forms.ProgressBar()
+        Me.ProgressionBox = New System.Windows.Forms.TableLayoutPanel()
+        Me.ProgressionLabel = New System.Windows.Forms.Label()
+        Me.ProgressionBox.SuspendLayout()
         Me.SuspendLayout()
         '
-        'mainTableLayoutPanel
+        'ProgressionBar
         '
-        Me.mainTableLayoutPanel.ColumnCount = 1
-        Me.mainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.mainTableLayoutPanel.Controls.Add(Me.progressionBar, 0, 1)
-        Me.mainTableLayoutPanel.Controls.Add(Me.progressionLabel, 0, 0)
-        Me.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mainTableLayoutPanel.Location = New System.Drawing.Point(0, 0)
-        Me.mainTableLayoutPanel.Name = "mainTableLayoutPanel"
-        Me.mainTableLayoutPanel.RowCount = 2
-        Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.mainTableLayoutPanel.Size = New System.Drawing.Size(621, 90)
-        Me.mainTableLayoutPanel.TabIndex = 0
+        Me.ProgressionBar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ProgressionBar.Location = New System.Drawing.Point(3, 34)
+        Me.ProgressionBar.Name = "ProgressionBar"
+        Me.ProgressionBar.Size = New System.Drawing.Size(566, 38)
+        Me.ProgressionBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous
+        Me.ProgressionBar.TabIndex = 0
         '
-        'progressionBar
+        'ProgressionBox
         '
-        Me.progressionBar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.progressionBar.Location = New System.Drawing.Point(3, 48)
-        Me.progressionBar.Name = "progressionBar"
-        Me.progressionBar.Size = New System.Drawing.Size(615, 39)
-        Me.progressionBar.TabIndex = 1
-        Me.progressionBar.Value = 50
+        Me.ProgressionBox.AutoSize = True
+        Me.ProgressionBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ProgressionBox.ColumnCount = 1
+        Me.ProgressionBox.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.ProgressionBox.Controls.Add(Me.ProgressionBar, 0, 1)
+        Me.ProgressionBox.Controls.Add(Me.ProgressionLabel, 0, 0)
+        Me.ProgressionBox.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ProgressionBox.Location = New System.Drawing.Point(0, 0)
+        Me.ProgressionBox.Name = "ProgressionBox"
+        Me.ProgressionBox.RowCount = 2
+        Me.ProgressionBox.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.ProgressionBox.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.ProgressionBox.Size = New System.Drawing.Size(572, 75)
+        Me.ProgressionBox.TabIndex = 1
         '
-        'progressionLabel
+        'ProgressionLabel
         '
-        Me.progressionLabel.AutoSize = True
-        Me.progressionLabel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.progressionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.progressionLabel.Location = New System.Drawing.Point(3, 0)
-        Me.progressionLabel.Name = "progressionLabel"
-        Me.progressionLabel.Size = New System.Drawing.Size(615, 45)
-        Me.progressionLabel.TabIndex = 2
-        Me.progressionLabel.Text = "Veuillez patienter..."
-        Me.progressionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ProgressionLabel.AutoSize = True
+        Me.ProgressionLabel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ProgressionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ProgressionLabel.Location = New System.Drawing.Point(3, 0)
+        Me.ProgressionLabel.Name = "ProgressionLabel"
+        Me.ProgressionLabel.Size = New System.Drawing.Size(566, 31)
+        Me.ProgressionLabel.TabIndex = 1
+        Me.ProgressionLabel.Text = "Message de progression"
+        Me.ProgressionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ProgressionDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(621, 90)
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(572, 75)
         Me.ControlBox = False
-        Me.Controls.Add(Me.mainTableLayoutPanel)
+        Me.Controls.Add(Me.ProgressionBox)
         Me.Name = "ProgressionDialog"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Progression"
-        Me.mainTableLayoutPanel.ResumeLayout(False)
-        Me.mainTableLayoutPanel.PerformLayout()
+        Me.Text = "Veuillez patienter"
+        Me.ProgressionBox.ResumeLayout(False)
+        Me.ProgressionBox.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents mainTableLayoutPanel As TableLayoutPanel
-    Friend WithEvents progressionBar As ProgressBar
-    Friend WithEvents progressionLabel As Label
+    Friend WithEvents ProgressionBar As ProgressBar
+    Friend WithEvents ProgressionBox As TableLayoutPanel
+    Friend WithEvents ProgressionLabel As Label
 End Class

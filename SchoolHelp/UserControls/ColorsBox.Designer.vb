@@ -64,11 +64,12 @@ Partial Class ColorsBox
         '
         Me.color6Button.AutoSize = True
         Me.color6Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.color6Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.color6Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.color6Button.Location = New System.Drawing.Point(279, 34)
+        Me.color6Button.Location = New System.Drawing.Point(278, 34)
         Me.color6Button.MinimumSize = New System.Drawing.Size(50, 50)
         Me.color6Button.Name = "color6Button"
-        Me.color6Button.Size = New System.Drawing.Size(54, 50)
+        Me.color6Button.Size = New System.Drawing.Size(55, 50)
         Me.color6Button.TabIndex = 6
         Me.color6Button.UseVisualStyleBackColor = False
         '
@@ -76,8 +77,9 @@ Partial Class ColorsBox
         '
         Me.color5Button.AutoSize = True
         Me.color5Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.color5Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.color5Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.color5Button.Location = New System.Drawing.Point(224, 34)
+        Me.color5Button.Location = New System.Drawing.Point(223, 34)
         Me.color5Button.MinimumSize = New System.Drawing.Size(50, 50)
         Me.color5Button.Name = "color5Button"
         Me.color5Button.Size = New System.Drawing.Size(50, 50)
@@ -88,8 +90,9 @@ Partial Class ColorsBox
         '
         Me.color4Button.AutoSize = True
         Me.color4Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.color4Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.color4Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.color4Button.Location = New System.Drawing.Point(169, 34)
+        Me.color4Button.Location = New System.Drawing.Point(168, 34)
         Me.color4Button.MinimumSize = New System.Drawing.Size(50, 50)
         Me.color4Button.Name = "color4Button"
         Me.color4Button.Size = New System.Drawing.Size(50, 50)
@@ -100,8 +103,9 @@ Partial Class ColorsBox
         '
         Me.color3Button.AutoSize = True
         Me.color3Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.color3Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.color3Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.color3Button.Location = New System.Drawing.Point(114, 34)
+        Me.color3Button.Location = New System.Drawing.Point(113, 34)
         Me.color3Button.MinimumSize = New System.Drawing.Size(50, 50)
         Me.color3Button.Name = "color3Button"
         Me.color3Button.Size = New System.Drawing.Size(50, 50)
@@ -112,8 +116,9 @@ Partial Class ColorsBox
         '
         Me.color2Button.AutoSize = True
         Me.color2Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.color2Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.color2Button.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.color2Button.Location = New System.Drawing.Point(59, 34)
+        Me.color2Button.Location = New System.Drawing.Point(58, 34)
         Me.color2Button.MinimumSize = New System.Drawing.Size(50, 50)
         Me.color2Button.Name = "color2Button"
         Me.color2Button.Size = New System.Drawing.Size(50, 50)
@@ -124,6 +129,7 @@ Partial Class ColorsBox
         '
         Me.color1Button.AutoSize = True
         Me.color1Button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.color1Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.color1Button.Dock = System.Windows.Forms.DockStyle.Fill
         Me.color1Button.Location = New System.Drawing.Point(3, 34)
         Me.color1Button.MinimumSize = New System.Drawing.Size(50, 50)

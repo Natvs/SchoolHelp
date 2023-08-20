@@ -28,7 +28,9 @@ Partial Class setMarkDialog
         Me.markLabel = New System.Windows.Forms.Label()
         Me.markNumericUpDown = New System.Windows.Forms.NumericUpDown()
         Me.okButton = New System.Windows.Forms.Button()
+        Me.autoColorCheckBox = New System.Windows.Forms.CheckBox()
         Me.backColorsBox = New SchoolHelp.ColorsBox()
+        Me.nameMessageTextBox = New SchoolHelp.TextMessageBox()
         Me.mainTableLayoutPanel.SuspendLayout()
         CType(Me.coefNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.markNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,33 +43,39 @@ Partial Class setMarkDialog
         Me.mainTableLayoutPanel.ColumnCount = 2
         Me.mainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.mainTableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.mainTableLayoutPanel.Controls.Add(Me.coefNumericUpDown, 1, 1)
-        Me.mainTableLayoutPanel.Controls.Add(Me.coefLabel, 1, 0)
-        Me.mainTableLayoutPanel.Controls.Add(Me.markLabel, 0, 0)
-        Me.mainTableLayoutPanel.Controls.Add(Me.markNumericUpDown, 0, 1)
-        Me.mainTableLayoutPanel.Controls.Add(Me.okButton, 0, 3)
-        Me.mainTableLayoutPanel.Controls.Add(Me.backColorsBox, 0, 2)
+        Me.mainTableLayoutPanel.Controls.Add(Me.coefNumericUpDown, 1, 2)
+        Me.mainTableLayoutPanel.Controls.Add(Me.coefLabel, 1, 1)
+        Me.mainTableLayoutPanel.Controls.Add(Me.markLabel, 0, 1)
+        Me.mainTableLayoutPanel.Controls.Add(Me.markNumericUpDown, 0, 2)
+        Me.mainTableLayoutPanel.Controls.Add(Me.okButton, 0, 5)
+        Me.mainTableLayoutPanel.Controls.Add(Me.backColorsBox, 0, 4)
+        Me.mainTableLayoutPanel.Controls.Add(Me.nameMessageTextBox, 0, 0)
+        Me.mainTableLayoutPanel.Controls.Add(Me.autoColorCheckBox, 0, 3)
         Me.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.mainTableLayoutPanel.Location = New System.Drawing.Point(0, 0)
         Me.mainTableLayoutPanel.Name = "mainTableLayoutPanel"
-        Me.mainTableLayoutPanel.RowCount = 4
+        Me.mainTableLayoutPanel.RowCount = 6
         Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.mainTableLayoutPanel.Size = New System.Drawing.Size(341, 220)
+        Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.mainTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.mainTableLayoutPanel.Size = New System.Drawing.Size(341, 335)
         Me.mainTableLayoutPanel.TabIndex = 0
         '
         'coefNumericUpDown
         '
         Me.coefNumericUpDown.AutoSize = True
+        Me.coefNumericUpDown.DecimalPlaces = 2
         Me.coefNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill
         Me.coefNumericUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.coefNumericUpDown.Location = New System.Drawing.Point(173, 34)
-        Me.coefNumericUpDown.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.coefNumericUpDown.Increment = New Decimal(New Integer() {25, 0, 0, 131072})
+        Me.coefNumericUpDown.Location = New System.Drawing.Point(173, 107)
+        Me.coefNumericUpDown.Minimum = New Decimal(New Integer() {25, 0, 0, 131072})
         Me.coefNumericUpDown.Name = "coefNumericUpDown"
         Me.coefNumericUpDown.Size = New System.Drawing.Size(165, 45)
-        Me.coefNumericUpDown.TabIndex = 3
+        Me.coefNumericUpDown.TabIndex = 1
         Me.coefNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.coefNumericUpDown.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -77,7 +85,7 @@ Partial Class setMarkDialog
         Me.coefLabel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.coefLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.coefLabel.ForeColor = System.Drawing.Color.Red
-        Me.coefLabel.Location = New System.Drawing.Point(173, 0)
+        Me.coefLabel.Location = New System.Drawing.Point(173, 73)
         Me.coefLabel.Name = "coefLabel"
         Me.coefLabel.Size = New System.Drawing.Size(165, 31)
         Me.coefLabel.TabIndex = 1
@@ -90,7 +98,7 @@ Partial Class setMarkDialog
         Me.markLabel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.markLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.markLabel.ForeColor = System.Drawing.Color.Red
-        Me.markLabel.Location = New System.Drawing.Point(3, 0)
+        Me.markLabel.Location = New System.Drawing.Point(3, 73)
         Me.markLabel.Name = "markLabel"
         Me.markLabel.Size = New System.Drawing.Size(164, 31)
         Me.markLabel.TabIndex = 0
@@ -100,15 +108,15 @@ Partial Class setMarkDialog
         'markNumericUpDown
         '
         Me.markNumericUpDown.AutoSize = True
-        Me.markNumericUpDown.DecimalPlaces = 1
+        Me.markNumericUpDown.DecimalPlaces = 2
         Me.markNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill
         Me.markNumericUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.markNumericUpDown.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
-        Me.markNumericUpDown.Location = New System.Drawing.Point(3, 34)
+        Me.markNumericUpDown.Location = New System.Drawing.Point(3, 107)
         Me.markNumericUpDown.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.markNumericUpDown.Name = "markNumericUpDown"
         Me.markNumericUpDown.Size = New System.Drawing.Size(164, 45)
-        Me.markNumericUpDown.TabIndex = 2
+        Me.markNumericUpDown.TabIndex = 0
         Me.markNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'okButton
@@ -119,12 +127,27 @@ Partial Class setMarkDialog
         Me.okButton.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.okButton.Dock = System.Windows.Forms.DockStyle.Fill
         Me.okButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.okButton.Location = New System.Drawing.Point(3, 178)
+        Me.okButton.Location = New System.Drawing.Point(3, 292)
         Me.okButton.Name = "okButton"
         Me.okButton.Size = New System.Drawing.Size(335, 41)
-        Me.okButton.TabIndex = 4
+        Me.okButton.TabIndex = 2
         Me.okButton.Text = "Valider"
         Me.okButton.UseVisualStyleBackColor = True
+        '
+        'autoColorCheckBox
+        '
+        Me.autoColorCheckBox.AutoSize = True
+        Me.mainTableLayoutPanel.SetColumnSpan(Me.autoColorCheckBox, 2)
+        Me.autoColorCheckBox.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.autoColorCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.autoColorCheckBox.ForeColor = System.Drawing.Color.Red
+        Me.autoColorCheckBox.Location = New System.Drawing.Point(3, 158)
+        Me.autoColorCheckBox.Name = "autoColorCheckBox"
+        Me.autoColorCheckBox.Size = New System.Drawing.Size(335, 35)
+        Me.autoColorCheckBox.TabIndex = 4
+        Me.autoColorCheckBox.Text = "Couleur automatique"
+        Me.autoColorCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.autoColorCheckBox.UseVisualStyleBackColor = True
         '
         'backColorsBox
         '
@@ -132,10 +155,21 @@ Partial Class setMarkDialog
         Me.backColorsBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.mainTableLayoutPanel.SetColumnSpan(Me.backColorsBox, 2)
         Me.backColorsBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.backColorsBox.Location = New System.Drawing.Point(3, 85)
+        Me.backColorsBox.Location = New System.Drawing.Point(3, 199)
         Me.backColorsBox.Name = "backColorsBox"
         Me.backColorsBox.Size = New System.Drawing.Size(335, 87)
-        Me.backColorsBox.TabIndex = 5
+        Me.backColorsBox.TabIndex = 1
+        '
+        'nameMessageTextBox
+        '
+        Me.nameMessageTextBox.AutoSize = True
+        Me.nameMessageTextBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.mainTableLayoutPanel.SetColumnSpan(Me.nameMessageTextBox, 2)
+        Me.nameMessageTextBox.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.nameMessageTextBox.Location = New System.Drawing.Point(3, 3)
+        Me.nameMessageTextBox.Name = "nameMessageTextBox"
+        Me.nameMessageTextBox.Size = New System.Drawing.Size(335, 67)
+        Me.nameMessageTextBox.TabIndex = 3
         '
         'setMarkDialog
         '
@@ -143,7 +177,7 @@ Partial Class setMarkDialog
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(341, 220)
+        Me.ClientSize = New System.Drawing.Size(341, 335)
         Me.Controls.Add(Me.mainTableLayoutPanel)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -166,4 +200,6 @@ Partial Class setMarkDialog
     Friend WithEvents markNumericUpDown As NumericUpDown
     Friend WithEvents okButton As Button
     Friend WithEvents backColorsBox As ColorsBox
+    Friend WithEvents nameMessageTextBox As TextMessageBox
+    Friend WithEvents autoColorCheckBox As CheckBox
 End Class

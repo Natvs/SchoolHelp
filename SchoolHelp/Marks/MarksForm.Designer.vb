@@ -23,11 +23,11 @@ Partial Class MarksForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.mainPanel = New System.Windows.Forms.TableLayoutPanel()
+        Me.backButton = New System.Windows.Forms.Button()
         Me.addCollectionButton = New System.Windows.Forms.Button()
         Me.marksLabel = New System.Windows.Forms.Label()
         Me.marksPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.addMarkButton = New System.Windows.Forms.Button()
-        Me.backButton = New System.Windows.Forms.Button()
         Me.mainPanel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,10 +49,23 @@ Partial Class MarksForm
         Me.mainPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.mainPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.mainPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.mainPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.mainPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.mainPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.mainPanel.Size = New System.Drawing.Size(1041, 181)
+        Me.mainPanel.Size = New System.Drawing.Size(712, 302)
         Me.mainPanel.TabIndex = 0
+        '
+        'backButton
+        '
+        Me.backButton.AutoSize = True
+        Me.backButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.backButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.backButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.backButton.Location = New System.Drawing.Point(3, 258)
+        Me.backButton.Name = "backButton"
+        Me.backButton.Size = New System.Drawing.Size(706, 41)
+        Me.backButton.TabIndex = 3
+        Me.backButton.Text = "Retour"
+        Me.backButton.UseVisualStyleBackColor = True
         '
         'addCollectionButton
         '
@@ -62,8 +75,8 @@ Partial Class MarksForm
         Me.addCollectionButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addCollectionButton.Location = New System.Drawing.Point(3, 34)
         Me.addCollectionButton.Name = "addCollectionButton"
-        Me.addCollectionButton.Size = New System.Drawing.Size(1035, 41)
-        Me.addCollectionButton.TabIndex = 3
+        Me.addCollectionButton.Size = New System.Drawing.Size(706, 41)
+        Me.addCollectionButton.TabIndex = 0
         Me.addCollectionButton.Text = "Ajouter une collection"
         Me.addCollectionButton.UseVisualStyleBackColor = True
         '
@@ -75,7 +88,7 @@ Partial Class MarksForm
         Me.marksLabel.ForeColor = System.Drawing.Color.Red
         Me.marksLabel.Location = New System.Drawing.Point(3, 0)
         Me.marksLabel.Name = "marksLabel"
-        Me.marksLabel.Size = New System.Drawing.Size(1035, 31)
+        Me.marksLabel.Size = New System.Drawing.Size(706, 31)
         Me.marksLabel.TabIndex = 0
         Me.marksLabel.Text = "Mes notes"
         Me.marksLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -83,13 +96,12 @@ Partial Class MarksForm
         'marksPanel
         '
         Me.marksPanel.AutoScroll = True
-        Me.marksPanel.AutoSize = True
         Me.marksPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.marksPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.marksPanel.Location = New System.Drawing.Point(3, 128)
         Me.marksPanel.Name = "marksPanel"
-        Me.marksPanel.Size = New System.Drawing.Size(1035, 1)
-        Me.marksPanel.TabIndex = 1
+        Me.marksPanel.Size = New System.Drawing.Size(706, 124)
+        Me.marksPanel.TabIndex = 2
         '
         'addMarkButton
         '
@@ -99,23 +111,10 @@ Partial Class MarksForm
         Me.addMarkButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.addMarkButton.Location = New System.Drawing.Point(3, 81)
         Me.addMarkButton.Name = "addMarkButton"
-        Me.addMarkButton.Size = New System.Drawing.Size(1035, 41)
-        Me.addMarkButton.TabIndex = 2
+        Me.addMarkButton.Size = New System.Drawing.Size(706, 41)
+        Me.addMarkButton.TabIndex = 1
         Me.addMarkButton.Text = "Ajouter une note"
         Me.addMarkButton.UseVisualStyleBackColor = True
-        '
-        'backButton
-        '
-        Me.backButton.AutoSize = True
-        Me.backButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.backButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.backButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.backButton.Location = New System.Drawing.Point(3, 134)
-        Me.backButton.Name = "backButton"
-        Me.backButton.Size = New System.Drawing.Size(1035, 44)
-        Me.backButton.TabIndex = 4
-        Me.backButton.Text = "Retour"
-        Me.backButton.UseVisualStyleBackColor = True
         '
         'MarksForm
         '
@@ -123,7 +122,7 @@ Partial Class MarksForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1041, 181)
+        Me.ClientSize = New System.Drawing.Size(712, 302)
         Me.Controls.Add(Me.mainPanel)
         Me.Name = "MarksForm"
         Me.Text = "Notes"

@@ -4,6 +4,11 @@
 Public Class MarkBox
 
     ''' <summary>
+    ''' Obtient le nom la note de ce MarkBox
+    ''' </summary>
+    Public markName As String
+
+    ''' <summary>
     ''' Obtient la note de ce MarkBox
     ''' </summary>
     Public mark As Decimal
@@ -11,12 +16,22 @@ Public Class MarkBox
     ''' <summary>
     ''' Obtient le coefficient de ce MarkBox
     ''' </summary>
-    Public coef As Integer
+    Public coef As Decimal
 
     ''' <summary>
-    ''' Obtient la couleur d'arrière-plan de ce MarkBox
+    ''' Obtient la couleur d'arrière-plan de la note
     ''' </summary>
-    Public markBackColor As Color
+    Public markColor As Color
+
+    ''' <summary>
+    ''' Obtient le numéro de la couleur de la note
+    ''' </summary>
+    Public markColorNumber As Integer
+
+    ''' <summary>
+    ''' Obtient la valeur qui définit si la couleur automatique est activée
+    ''' </summary>
+    Public useAutoColor As Boolean
 
     ''' <summary>
     ''' Obtient le formulaire de notes parent
@@ -28,16 +43,12 @@ Public Class MarkBox
     ''' </summary>
     ''' <param name="mark">La note de ce MarkBox</param>
     ''' <param name="coef">Le coefficient de ce MarkBox</param>
+    ''' <param name="colorNumber">Le numéro de couleur de ce MarkBox</param>
+    ''' <param name="useAutoColor">Indique si la couleur automatique est activée</param>
     ''' <param name="parent">Le formulaire de note parent</param>
-    Public Sub initialize(mark As Decimal, coef As Integer, backColor As Color, parent As MarksForm)
-        Me.mark = mark
-        Me.coef = coef
-        Me.markBackColor = backColor
+    Public Sub initialize(markName As String, mark As Decimal, coef As Decimal, colorNumber As Integer, useAutoColor As Boolean, parent As MarksForm)
         Me.marksForm = parent
-
-        markLabel.Text = "Note : " + mark.ToString
-        coefLabel.Text = "Coefficient : " + coef.ToString
-        Me.BackColor = backColor
+        initialize(markName, mark, coef, colorNumber, useAutoColor)
     End Sub
 
     ''' <summary>
@@ -45,14 +56,32 @@ Public Class MarkBox
     ''' </summary>
     ''' <param name="mark">La note de ce MarkBox</param>
     ''' <param name="coef">Le coefficient de ce MarkBox</param>
-    Private Sub initialize(mark As Decimal, coef As Integer, backColor As Color)
+    ''' <param name="colorNumber">Le numéro de couleur de ce MarkBox</param>
+    ''' <param name="useAutoColor">Indique si la couleur automatique est activée</param>
+    Private Sub initialize(markName As String, mark As Decimal, coef As Decimal, colorNumber As Integer, useAutoColor As Boolean)
+        Me.markName = markName
         Me.mark = mark
         Me.coef = coef
-        Me.markBackColor = backColor
+        Me.markColorNumber = colorNumber
+        Me.markColor = marksApp.marks.colors.getColor(Me.markColorNumber)
+        Me.useAutoColor = useAutoColor
 
+        Dim inversedColor As Color
+
+        If Me.useAutoColor Then
+            Me.BackColor = marksApp.marks.colors.getAutoColor(mark)
+            inversedColor = values.ColorValue.inverse(marksApp.marks.colors.getAutoColor(mark))
+        Else
+            Me.BackColor = markColor
+            inversedColor = values.ColorValue.inverse(markColor)
+        End If
+
+        nameLabel.Text = markName
+        nameLabel.ForeColor = inversedColor
         markLabel.Text = "Note : " + mark.ToString
+        markLabel.ForeColor = inversedColor
         coefLabel.Text = "Coefficient : " + coef.ToString
-        Me.BackColor = markBackColor
+        coefLabel.ForeColor = inversedColor
     End Sub
 
 #Region "edition"
@@ -63,7 +92,11 @@ Public Class MarkBox
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub delete(sender As Object, e As EventArgs) Handles deleteButton.Click
-        marksForm.deleteMark(Me)
+        Using deleteDialog As New SchoolHelpDialog
+            If deleteDialog.ShowDialog("Voulez-vous supprimer cette note ?", values.dialogs.DialogsTypes.YesNo) = DialogResult.Yes Then
+                marksForm.deleteMark(Me)
+            End If
+        End Using
     End Sub
 
     ''' <summary>
@@ -73,8 +106,8 @@ Public Class MarkBox
     ''' <param name="e"></param>
     Private Sub edit(sender As Object, e As EventArgs) Handles editButton.Click
         Using markDialog As New setMarkDialog
-            Dim result As DialogResult = markDialog.ShowDialog(mark, coef)
-            initialize(markDialog.mark, markDialog.coef, markDialog.selectedBackColor)
+            Dim result As DialogResult = markDialog.ShowDialog(Me.markName, Me.mark, Me.coef, Me.markColorNumber, Me.useAutoColor)
+            initialize(markDialog.markName, markDialog.mark, markDialog.coef, markDialog.selectedColorNumber, markDialog.useAutoColor)
         End Using
     End Sub
 
@@ -88,9 +121,11 @@ Public Class MarkBox
     ''' <param name="path">Le chemin du fichier</param>
     Public Sub save(path As String)
         Using file = FileIO.FileSystem.OpenTextFileWriter(path, False)
-            file.WriteLine(mark.ToString)
-            file.WriteLine(coef.ToString)
-            file.WriteLine(markBackColor.ToArgb)
+            file.WriteLine(Me.markName)
+            file.WriteLine(Me.mark.ToString)
+            file.WriteLine(Me.coef.ToString)
+            file.WriteLine(Me.markColorNumber)
+            file.WriteLine(values.BooleanValue.getString(Me.useAutoColor))
         End Using
     End Sub
 
@@ -101,11 +136,13 @@ Public Class MarkBox
     ''' <param name="parent">Le formulaire de note parent</param>
     Public Shadows Sub load(path As String, parent As MarksForm)
         Using file = FileIO.FileSystem.OpenTextFileReader(path)
-            mark = file.ReadLine
-            coef = file.ReadLine
-            markBackColor = Color.FromArgb(file.ReadLine)
+            Me.markName = file.ReadLine
+            Me.mark = file.ReadLine
+            Me.coef = file.ReadLine
+            Me.markColorNumber = file.ReadLine
+            Me.useAutoColor = values.BooleanValue.fromString(file.ReadLine, True)
         End Using
-        initialize(mark, coef, markBackColor, parent)
+        initialize(markName, mark, coef, markColorNumber, useAutoColor, parent)
     End Sub
 
 #End Region

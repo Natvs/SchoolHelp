@@ -65,7 +65,7 @@ Partial Class MarksCollectionBox
         Me.openButton.Location = New System.Drawing.Point(3, 65)
         Me.openButton.Name = "openButton"
         Me.openButton.Size = New System.Drawing.Size(217, 35)
-        Me.openButton.TabIndex = 8
+        Me.openButton.TabIndex = 0
         Me.openButton.Text = "Accéder à la collection"
         Me.openButton.UseVisualStyleBackColor = True
         '
@@ -78,7 +78,7 @@ Partial Class MarksCollectionBox
         Me.editButton.Location = New System.Drawing.Point(226, 65)
         Me.editButton.Name = "editButton"
         Me.editButton.Size = New System.Drawing.Size(91, 35)
-        Me.editButton.TabIndex = 7
+        Me.editButton.TabIndex = 1
         Me.editButton.Text = "Modifier"
         Me.editButton.UseVisualStyleBackColor = True
         '
@@ -91,7 +91,7 @@ Partial Class MarksCollectionBox
         Me.deleteButton.Location = New System.Drawing.Point(323, 65)
         Me.deleteButton.Name = "deleteButton"
         Me.deleteButton.Size = New System.Drawing.Size(112, 35)
-        Me.deleteButton.TabIndex = 3
+        Me.deleteButton.TabIndex = 2
         Me.deleteButton.Text = "Supprimer"
         Me.deleteButton.UseVisualStyleBackColor = True
         '
@@ -106,7 +106,7 @@ Partial Class MarksCollectionBox
         Me.collectionLabel.Name = "collectionLabel"
         Me.collectionLabel.Size = New System.Drawing.Size(432, 31)
         Me.collectionLabel.TabIndex = 1
-        Me.collectionLabel.Text = "Collection :"
+        Me.collectionLabel.Text = "Collection"
         Me.collectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'mediumLabel
